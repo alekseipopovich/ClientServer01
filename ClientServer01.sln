@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThread01", "MultiThread01\MultiThread01.csproj", "{DC855F3B-079C-4B5E-AC04-E99C0FF3C861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{E84774E2-6EF7-45EC-8F6B-981D82BA67D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC855F3B-079C-4B5E-AC04-E99C0FF3C861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC855F3B-079C-4B5E-AC04-E99C0FF3C861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC855F3B-079C-4B5E-AC04-E99C0FF3C861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC855F3B-079C-4B5E-AC04-E99C0FF3C861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84774E2-6EF7-45EC-8F6B-981D82BA67D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84774E2-6EF7-45EC-8F6B-981D82BA67D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84774E2-6EF7-45EC-8F6B-981D82BA67D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84774E2-6EF7-45EC-8F6B-981D82BA67D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CD52077-0C9A-401F-A72C-EE0878E5D4C9}
+	EndGlobalSection
+EndGlobal
