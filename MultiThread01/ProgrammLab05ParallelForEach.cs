@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultiThread01
 {
-    class ProgrammLab05MultiThreads
+    class ProgrammLab05ParallelForEach
     {
-        static void MainLab051(string[] args)
+        static void MainLab052(string[] args)
         {
             // Имитация данных о студентах и их оценках
             List<Grade> grades = new List<Grade>
@@ -30,25 +30,13 @@ namespace MultiThread01
             // Замер времени выполнения
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            // Создаем и запускаем потоки для каждого студента, который рассчитывает его средний балл.
-            List<Thread> threads = new List<Thread>();
-            foreach (var student in students)
+            // Параллельная обработка с использованием Parallel.ForEach
+            Parallel.ForEach(students, student =>
             {
-                Thread thread = new Thread(() =>
-                {
-                    double averageScore = gradeService.CalculateAverageScore(grades, student);
-                    Console.WriteLine($" Для студента {student} средняя оценка: {averageScore}");
-                });
-                threads.Add(thread);
-                thread.Start();
-            }
+                double averageScore = gradeService.CalculateAverageScore(grades, student);
+                Console.WriteLine($" Для студента {student} средняя оценка: {averageScore}");
+            });
 
-            // Ожидаем завершения всех потоков
-            foreach (var thread in threads)
-            {
-                // используется метод Join() для каждого потока, чтобы дождаться их завершения.
-                thread.Join();
-            }
 
             watch.Stop();
 

@@ -8,7 +8,7 @@ namespace MultiThread01
 {
     class ProgrammLab05Async
     {
-        static async Task MainLab05a(string[] args)
+        static async Task MainLab05Async(string[] args)
         {
             // Имитация данных о студентах и их оценках
             List<Grade> grades = new List<Grade>
