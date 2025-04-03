@@ -17,7 +17,7 @@ namespace MultiThread01
             try
             {
                 string content = await GetWebsiteContentAsync(client, "http://httpbin.org/get");
-                Console.WriteLine(content.Substring(0, 100)); // Выводим первые 100 символов
+                Console.WriteLine(content.Substring(0, 150)); // Выводим первые 100 символов
             }
             catch (HttpRequestException e)
             {

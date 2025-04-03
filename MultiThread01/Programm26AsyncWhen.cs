@@ -16,9 +16,9 @@ namespace MultiThread01
             var task3 = PrintAsync("Hello Java");
 
             // ожидаем завершения всех задач
-            //await Task.WhenAll(task1, task2, task3);
+            await Task.WhenAll(task1, task2, task3);
 
-            await Task.WhenAny(task1, task2, task3);
+            //await Task.WhenAny(task1, task2, task3);
         }
 
         static async Task PrintAsync(string message)

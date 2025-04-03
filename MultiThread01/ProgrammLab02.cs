@@ -53,7 +53,7 @@ namespace MultiThread01
         static void PrintNumbersSecond()
         {
             Console.WriteLine("Поток 2 ожидает завершения потока 1...");
-            thread1.Join(); // Ждем завершения первого потока
+            //thread1.Join(); // Ждем завершения первого потока
 
             Console.WriteLine("Поток 2 начал работу");
             for (int i = 1; i <= 100; i++)

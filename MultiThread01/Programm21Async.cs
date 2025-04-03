@@ -8,7 +8,7 @@ namespace MultiThread01
 {
     class Programm21Async
     {
-        static async Task Main21()
+        static async Task Main21(string[] arg)
         {
 
             var task1 = CallOut();
