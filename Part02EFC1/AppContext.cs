@@ -17,6 +17,8 @@ namespace EntityFramework01
 
         public DbSet<Grade> Grades { get; set; } = null!;
 
+        public DbSet<Enrollment> Enrollments { get; set; } = null!;
+
         public ApplicationContext() { Database.EnsureDeleted(); Database.EnsureCreated(); }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,8 +29,11 @@ namespace EntityFramework01
                         .SetBasePath(Directory.GetCurrentDirectory())
                         .Build();
 
-            optionsBuilder.UseSqlite(config.GetConnectionString("DefaultConnection"));
+            //optionsBuilder.UseSqlite(config.GetConnectionString("DefaultConnection"));
             optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Warning);
+
+            // Включение ленивой загрузки
+            optionsBuilder.UseLazyLoadingProxies().UseSqlite(config.GetConnectionString("DefaultConnection"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,6 +41,20 @@ namespace EntityFramework01
             base.OnModelCreating(modelBuilder);
 
             //modelBuilder.Entity<Grade>().HasIndex(u => u.StudentID).IsUnique();
+
+            modelBuilder.Entity<Enrollment>()
+               .HasKey(e => new { e.StudentId, e.CourseId });
+
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Student)
+                .WithMany(s => s.Enrollments)
+                .HasForeignKey(e => e.StudentId);
+
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Course)
+                .WithMany(c => c.Enrollments)
+                .HasForeignKey(e => e.CourseId);
+
         }
 
         public void SeedData()

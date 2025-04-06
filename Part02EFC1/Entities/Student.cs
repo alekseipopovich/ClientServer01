@@ -21,4 +21,6 @@ public class Student
 
     public virtual ICollection<Grade>? Grades { get; set; }
 
+    public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+
 }
