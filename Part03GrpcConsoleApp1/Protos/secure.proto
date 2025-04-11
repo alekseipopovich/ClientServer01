@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Part03GrpcConsoleApp1";
+
+package secure;
+
+// Определение сервиса
+service SecureService {
+  rpc GetSecretMessage (SecretRequest) returns (SecretResponse);
+}
+
+// Входное сообщение
+message SecretRequest {
+  string requestId = 1;
+}
+
+// Выходное сообщение
+message SecretResponse {
+  string message = 1;
+}

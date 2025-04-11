@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part03WebAPI", "Part03WebAP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part03WebAPI01", "WebAPI01\Part03WebAPI01.csproj", "{051B651A-BF43-B5DF-067E-99B7DFC3C4A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part03GrpcService1", "Part03GrpcService1\Part03GrpcService1.csproj", "{F392F52A-26BC-413C-89D4-42D021E560DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part03GrpcConsoleApp1", "Part03GrpcConsoleApp1\Part03GrpcConsoleApp1.csproj", "{53BEF1EC-E8D4-4D8C-A34E-1F5E53DA31D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{051B651A-BF43-B5DF-067E-99B7DFC3C4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051B651A-BF43-B5DF-067E-99B7DFC3C4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051B651A-BF43-B5DF-067E-99B7DFC3C4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F392F52A-26BC-413C-89D4-42D021E560DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F392F52A-26BC-413C-89D4-42D021E560DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F392F52A-26BC-413C-89D4-42D021E560DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F392F52A-26BC-413C-89D4-42D021E560DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53BEF1EC-E8D4-4D8C-A34E-1F5E53DA31D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BEF1EC-E8D4-4D8C-A34E-1F5E53DA31D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BEF1EC-E8D4-4D8C-A34E-1F5E53DA31D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BEF1EC-E8D4-4D8C-A34E-1F5E53DA31D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
