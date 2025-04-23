@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Part03GrpcService1";
+
+package student;
+
+// Определение сервиса
+service StudentService {
+  rpc GetStudent (GetStudentRequest) returns (StudentObjectResponse);
+  
+  rpc GetAllStudents (GetAllStudentRequest) returns (stream StudentObjectResponse);
+}
+
+message StudentObjectRequest {
+	string firstName = 1;
+	string lastName = 2;
+	int32 age = 3;
+}
+
+// Выходное сообщение
+message StudentObjectResponse {
+	int32 student_id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	int32 age = 4;
+}
+
+// Входное сообщение
+// Запрос студента по ID
+message GetStudentRequest {
+  int32 student_id = 1;
+}
+
+// Request all students
+message GetAllStudentRequest {
+	int32 limit = 1;
+}

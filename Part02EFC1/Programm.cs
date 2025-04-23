@@ -17,13 +17,21 @@ namespace EntityFramework01
                 // Инициализация данных, если они отсутствуют
                 db.SeedData();
 
+                Console.WriteLine("Выполнение запросов SQL:");
+
+                var studentsSQL = db.Students.FromSqlRaw<Student>("SELECT * FROM Students").ToList();
+
+                //db.Database.ExecuteSqlRaw("UPDATE Student SET FirstName='Kolya' WHERE Lastname='Pupkin'");
+                foreach(Student s in studentsSQL) { Console.WriteLine(s.LastName); }
+
+
                 // Eager Loading: Извлечение информации о курсах и студентах
                 var coursesWithStudents = db.Courses
                     .Include(c => c.Enrollments)
                     .ThenInclude(e => e.Student)
                     .ToList();
 
-                Console.WriteLine("Курсы и студенты:");
+                Console.WriteLine("\nКурсы и студенты:");
                 foreach (var course in coursesWithStudents)
                 {
                     Console.WriteLine($"Курс: {course.CourseName}");

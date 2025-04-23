@@ -14,8 +14,8 @@ namespace EntityDataModel.Entities
         public int EnrollmentId { get; set; }
 
         [ForeignKey("Student")]
-        public int StudentId { get; set; }
-        public virtual Student Student { get; set; }
+        public int StudentId { get; set; } // внешний ключ
+        public virtual Student Student { get; set; } // навигационное свойство
 
         [ForeignKey("Course")]
         public int CourseId { get; set; }
