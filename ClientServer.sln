@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part03GrpcConsoleApp1", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService2", "GrpcService2\GrpcService2.csproj", "{B5213DE2-780C-4A2B-98DC-57A8E87797E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{91609476-7E61-4A10-882F-6CCBEFF5131A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{57C270F7-6B32-4F14-B419-449C2F537E5B}"
 EndProject
 Global
@@ -73,10 +71,6 @@ Global
 		{B5213DE2-780C-4A2B-98DC-57A8E87797E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5213DE2-780C-4A2B-98DC-57A8E87797E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5213DE2-780C-4A2B-98DC-57A8E87797E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91609476-7E61-4A10-882F-6CCBEFF5131A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91609476-7E61-4A10-882F-6CCBEFF5131A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91609476-7E61-4A10-882F-6CCBEFF5131A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91609476-7E61-4A10-882F-6CCBEFF5131A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57C270F7-6B32-4F14-B419-449C2F537E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57C270F7-6B32-4F14-B419-449C2F537E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57C270F7-6B32-4F14-B419-449C2F537E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU

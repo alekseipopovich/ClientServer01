@@ -1,0 +1,60 @@
+name: CI/CD Pipeline with Docker
+
+# Триггеры для запуска workflow
+on:
+  push:
+    branches: [ main ] # Запуск при push в main
+  pull_request:
+    branches: [ main ] # Запуск при создании PR в main
+
+# Переменные окружения
+env:
+  DOTNET_VERSION: '9.0.x' # Версия .NET
+  SOLUTION_FILE: 'WebAPI/Part03WebAPI.sln' # Путь к файлу решения
+  TEST_PROJECT: 'WebAPI.Tests/WebAPI.Tests.csproj' # Путь к тестовому проекту
+  IMAGE_NAME: 'yourusername/webapi-app' # Имя образа в Docker Hub (замените yourusername)
+
+jobs:
+  # Job для CI: сборка, тестирование и создание Docker-образа
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонирование репозитория
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Установка .NET SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # 3. Восстановление зависимостей
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_FILE }}
+
+      # 4. Сборка проекта
+      - name: Build
+        run: dotnet build ${{ env.SOLUTION_FILE }} --configuration Release --no-restore
+
+      # 5. Запуск тестов
+      - name: Test
+        run: dotnet test ${{ env.TEST_PROJECT }} --no-build --verbosity normal
+
+      # 6. Логин в Docker Hub
+      - name: Log in to Docker Hub
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 7. Сборка и пуш Docker-образа
+      - name: Build and push Docker image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ env.IMAGE_NAME }}:latest,${{ env.IMAGE_NAME }}:${{ github.sha }}

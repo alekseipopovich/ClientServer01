@@ -1,0 +1,12 @@
+bin/ 
+obj/ 
+*.user 
+*.suo 
+.log 
+.vscode/ 
+.idea/ 
+publish/ 
+Dockerfile*.md 
+.git/ 
+.gitignore 
+.github/
